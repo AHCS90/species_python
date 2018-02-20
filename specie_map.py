@@ -1,12 +1,11 @@
+
+
+#Importing packages
+
 import pandas as pd
-# INSTRUCCION
-# Es necesario instalar el paquete folium desde Anaconda Navigator
 import folium
 
-# INSTRUCCION
-# Debeis descargaros un fichero csv con un conjunto de registros (records) de una especie
-# desde la pagina del OBIS: http://www.iobis.org y leerla en un DataFrame de pandas
-# que se llame specie con pd.read_csv
+# Importing Octopus vulgaris data. 
 specie = pd.read_csv('oc_vulgaris_record.csv')
 
 # Lectura de latitud y longitud de las observaciones
