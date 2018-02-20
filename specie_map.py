@@ -26,11 +26,11 @@ m = folium.Map(location=[50, 10], zoom_start=4, tiles='Stamen Watercolor')
 feature_group = folium.FeatureGroup('Ocurrences')
 
 # MODIFICABLE
-for lon, lat, date in zip(lon, lat, dates):
-    feature_group.add_child(folium.Marker(location=[lat, lon], popup=date))
+for lon, lat, dates in zip(lon, lat, dates):
+    feature_group.add_child(folium.Marker(location=[lat, lon], popup=dates))
 
 # Se incorporan los puntos al mapa
 m.add_child(feature_group)
 
 # Se guarda el mapa como una pagina web
-m.save('index.html')
+m.save('map_octopus.html')
