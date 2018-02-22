@@ -24,7 +24,7 @@ dates2 = specie2['eventDate'].astype('str')
 # Opciones de visualizacion de la especie
 # Debeis ajustar las coordenadas y el zoom del mapa a la localizacion de la especie
 # Muchas mas en: http://python-visualization.github.io/folium/docs-v0.5.0/modules.html
-m = folium.Map(location=[50, 10], zoom_start=1, tiles='Stamen Watercolor')
+m = folium.Map(location=[50, 10], zoom_start=3, tiles='Stamen Watercolor')
 
 # Creacion del conjunto de puntos
 feature_group = folium.FeatureGroup('Ocurrences')
@@ -32,10 +32,10 @@ feature_group = folium.FeatureGroup('Ocurrences')
 
 # MODIFICABLE
 for lon, lat, dates in zip(lon, lat, dates):
-    feature_group.add_child(folium.Marker(location=[lat, lon], popup = dates))
+    feature_group.add_child(folium.RegularPolygonMarker(location=[lat, lon], popup = dates, color='#af1818', fill_color='#af1818', number_of_sides=4, radius=3))
 
 for lon1, lat1, dates1 in zip(lon1, lat1, dates1):    
-    feature_group.add_child(folium.CircleMarker(location = [lat1, lon1], radius = 10, popup = dates1, color= '#57cc31', fill_color='#57cc31'))
+    feature_group.add_child(folium.RegularPolygonMarker(location = [lat1, lon1], popup = dates1, color= '#57cc31', fill_color='#57cc31', numer_of_sides=3, radius=3))
 
 for lon2, lat2, dates2 in zip(lon2, lat2, dates2):
     feature_group.add_child(folium.RegularPolygonMarker(location =[lat2, lon2], popup = dates2, color='#99208c', fill_color='#99208c', number_of_sides=4, radius=3))                                                      
