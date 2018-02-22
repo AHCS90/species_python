@@ -35,14 +35,15 @@ for lon, lat, dates in zip(lon, lat, dates):
     feature_group.add_child(folium.Marker(location=[lat, lon], popup = dates))
 
 for lon1, lat1, dates1 in zip(lon1, lat1, dates1):    
-    feature_group.add_child(folium.CircleMarker(location = [lat1, lon1], radius = '10', popup = dates1, color= '#57cc31', fill_color='#57cc31'))
-                                                       
-                                                                                               
+    feature_group.add_child(folium.CircleMarker(location = [lat1, lon1], radius = 10, popup = dates1, color= '#57cc31', fill_color='#57cc31'))
+
+for lon2, lat2, dates2 in zip(lon2, lat2, dates2):
+    feature_group.add_child(folium.RegularPolygonMarker(location =[lat2, lon2], popup = dates2, color='#99208c', fill_color='#99208c', number_of_sides=4, radius=3))                                                      
 
 # Se incorporan los puntos al mapa
 m.add_child(feature_group)  
 
 
 # Se guarda el mapa como una pagina web
-m.save('map_two_species.html')
+m.save('map_three_species.html')
 
