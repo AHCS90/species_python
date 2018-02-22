@@ -18,7 +18,7 @@ lon2, lat2 = specie2['decimalLongitude'], specie2['decimalLatitude']
 # Lectura de datos adicionales (se deben convertir a cadena para visualizarlos)
 dates = specie['eventDate'].astype('str')
 dates1 = specie1['eventDate'].astype('str')
-
+dates2 = specie2['eventDate'].astype('str')
 
 # MODIFICABLE
 # Opciones de visualizacion de la especie
@@ -35,7 +35,7 @@ for lon, lat, dates in zip(lon, lat, dates):
     feature_group.add_child(folium.Marker(location=[lat, lon], popup = dates))
 
 for lon1, lat1, dates1 in zip(lon1, lat1, dates1):    
-    feature_group.add_child(folium.CircleMarker(location = [lat1, lon1], radius = '50', popup = dates1, color= '#3186cc'))
+    feature_group.add_child(folium.CircleMarker(location = [lat1, lon1], radius = '10', popup = dates1, color= '#57cc31', fill_color='#57cc31'))
                                                        
                                                                                                
 
